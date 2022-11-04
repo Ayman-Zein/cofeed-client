@@ -1,0 +1,31 @@
+@import '../../../styles/abstract/variables';
+
+.avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__img {
+		position: relative;
+		cursor: pointer;
+	}
+
+	.addMode {
+		position: absolute;
+		z-index: 2;
+		background: rgba(169, 116, 255, 0.5);
+	}
+	&__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+	}
+
+	&__userName {
+		font-size: 1rem;
+		font-weight: 600;
+		color: $color-headers;
+		margin-bottom: 0 !important;
+	}
+}

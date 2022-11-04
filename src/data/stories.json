@@ -1,0 +1,40 @@
+{
+	"stories": [
+		{
+			"id": 1,
+			"avatarImg": "avatar1.png",
+			"userName": "Supardi",
+			"outlineColor": "#a4b6e1"
+		},
+		{
+			"id": 2,
+			"avatarImg": "avatar2.png",
+			"userName": "Dean",
+			"outlineColor": "#a4b6e1"
+		},
+		{
+			"id": 3,
+			"avatarImg": "avatar3.png",
+			"userName": "Theodore",
+			"outlineColor": "#a974ff"
+		},
+		{
+			"id": 4,
+			"avatarImg": "avatar4.png",
+			"userName": "Walter",
+			"outlineColor": "#a974ff"
+		},
+		{
+			"id": 5,
+			"avatarImg": "avatar5.png",
+			"userName": "Jesse",
+			"outlineColor": "#a974ff"
+		},
+		{
+			"id": 6,
+			"avatarImg": "avatar6.png",
+			"userName": "John",
+			"outlineColor": "#a974ff"
+		}
+	]
+}

@@ -1,0 +1,13 @@
+@import '../../../styles/abstract/variables';
+
+.tabs {
+	&__tabItem {
+		margin-right: 1rem;
+		cursor: pointer;
+		color: $color-secondary;
+		font-weight: 500;
+		&.activeTab {
+			color: $color-primary;
+		}
+	}
+}

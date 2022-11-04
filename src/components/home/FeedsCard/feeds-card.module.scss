@@ -1,0 +1,17 @@
+@import '../../../styles/abstract/variables';
+
+.card {
+	margin-bottom: 1.5rem;
+	&__imgContainer {
+		border: 5px solid #fff;
+		border-radius: 20px;
+		overflow: hidden;
+	}
+
+	&__userName {
+		font-size: 1rem;
+		font-weight: 600;
+		margin-top: 1rem;
+		color: $color-headers;
+	}
+}

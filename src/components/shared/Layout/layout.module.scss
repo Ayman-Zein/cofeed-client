@@ -1,0 +1,11 @@
+@import '../../../styles/abstract/variables';
+
+.sideBar__content {
+	background-color: $color-gray-light;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	clip-path: inset(0px -15px 0px 0px);
+}
+
+.mainContent {
+	background-color: $color-gray-medium;
+}
