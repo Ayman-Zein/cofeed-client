@@ -4,19 +4,30 @@ import classes from './feeds-card.module.scss';
 import { RiHeart3Fill } from 'react-icons/ri';
 import { AiFillMessage } from 'react-icons/ai';
 
-const FeedsCard = () => {
+const FeedsCard: React.FC<{
+	feedImg: string;
+	userImg: string;
+	userName: string;
+	isLiked: boolean;
+	numLikes: number;
+	numComments: number;
+}> = ({ feedImg, userImg, userName, isLiked, numLikes, numComments }) => {
 	return (
 		<div className={classes.card}>
 			<div className={classes.card__imgContainer}>
-				<img src='/images/card1.png' alt='' className='img-fluid' />
+				<img src={`/images/${feedImg}`} alt='card' className='img-full' />
 			</div>
 			<div className={`d-flex align-items-center justify-content-between ${classes.card__content}`}>
-				<Avatar imgSrc='/images/avatar1.png' size={40} text='ayman Zein' direction='row' />
+				<Avatar imgSrc={`/images/${userImg}`} size={40} text={userName} direction='row' />
 				<div className='ml-auto'>
-					<RiHeart3Fill fontSize={'1.8em'} color='#ff5775' onClick={() => console.log('clicked')} />
-					<span className='ms-2 me-3'>456</span>
+					<RiHeart3Fill
+						fontSize={'1.8em'}
+						color={isLiked ? '#ff5775' : '#a4b6e1'}
+						onClick={() => console.log('clicked')}
+					/>
+					<span className='ms-2 me-3'>{numLikes}</span>
 					<AiFillMessage fontSize={'1.8em'} color='#a4b6e1' onClick={() => console.log('clicked')} />
-					<span className='ms-2'>45</span>
+					<span className='ms-2'>{numComments}</span>
 				</div>
 			</div>
 		</div>
