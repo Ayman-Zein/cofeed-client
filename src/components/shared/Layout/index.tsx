@@ -5,8 +5,8 @@ import classes from './layout.module.scss';
 
 const Layout: React.FC<{ children: JSX.Element }> = ({ children }) => {
 	return (
-		<Container>
-			<Row>
+		<Container fluid>
+			<Row className={classes.justify__height}>
 				<Col lg={2} className={classes.sideBar__content}>
 					<SideMenu />
 				</Col>

@@ -5,13 +5,15 @@ import { RiHeart3Fill } from 'react-icons/ri';
 import { AiFillMessage } from 'react-icons/ai';
 
 const FeedsCard: React.FC<{
+	id: number;
 	feedImg: string;
 	userImg: string;
 	userName: string;
 	isLiked: boolean;
 	numLikes: number;
 	numComments: number;
-}> = ({ feedImg, userImg, userName, isLiked, numLikes, numComments }) => {
+	onSetLike: (itemId: number) => void;
+}> = ({ id, feedImg, userImg, userName, isLiked, numLikes, numComments, onSetLike }) => {
 	return (
 		<div className={classes.card}>
 			<div className={classes.card__imgContainer}>
@@ -23,7 +25,7 @@ const FeedsCard: React.FC<{
 					<RiHeart3Fill
 						fontSize={'1.8em'}
 						color={isLiked ? '#ff5775' : '#a4b6e1'}
-						onClick={() => console.log('clicked')}
+						onClick={() => onSetLike(id)}
 					/>
 					<span className='ms-2 me-3'>{numLikes}</span>
 					<AiFillMessage fontSize={'1.8em'} color='#a4b6e1' onClick={() => console.log('clicked')} />
