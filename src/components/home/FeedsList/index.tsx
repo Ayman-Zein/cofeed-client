@@ -12,19 +12,21 @@ interface FeedItem {
 	noOfLikes: number;
 	noOfComments: number;
 }
-const FeedsList: React.FC<{ data: FeedItem[] }> = ({ data }) => {
+const FeedsList: React.FC<{ data: FeedItem[]; onSetLike: any }> = ({ data, onSetLike }) => {
 	return (
 		<Row>
 			{data.length > 0 ? (
 				data.map((item) => (
 					<Col lg={6} key={item.id}>
 						<FeedsCard
+							id={item.id}
 							feedImg={item.imgSrc}
 							userImg={item.publisher.profilePicture}
 							userName={item.publisher.name}
 							isLiked={item.isLiked}
 							numLikes={item.noOfLikes}
 							numComments={item.noOfComments}
+							onSetLike={onSetLike}
 						/>
 					</Col>
 				))

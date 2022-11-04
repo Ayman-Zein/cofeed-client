@@ -39,51 +39,88 @@ const Home = () => {
 	const [ selectedIndex, setSelectedIndex ] = useState(1);
 	const [ loading, setLoading ] = useState(false);
 	const [ feeds, setFeeds ] = useState<FeedItem[]>([]);
-	const [ filteredData, setFilteredData ] = useState<FeedItem[]>([]);
+
+	// fetch data from api
+	const fetchData = () => {
+		fetch('http://localhost:5500/feeds').then((response) => response.json()).then((data) => {
+			localStorage.setItem('feeds', JSON.stringify(data));
+		});
+	};
+	useEffect(() => {
+		setLoading(true);
+		fetchData();
+		setLoading(false);
+	}, []);
 
 	// handle tabs selection
 	const handleTabSelect = (tabId: number) => {
 		setSelectedIndex(tabId);
 	};
 
+	// handle filter upon tab selection
 	useEffect(
 		() => {
-			setLoading(true);
-			// fetch data from api
-			const fetchData = () => {
-				fetch('http://localhost:5500/feeds').then((response) => response.json()).then((data) => {
-					if (selectedIndex === 1) {
-						setFeeds(data);
-					} else if (selectedIndex === 2) {
-						setFeeds(
-							data.filter(
-								(item: { publisher: { following: boolean } }) => item.publisher.following === true
-							)
-						);
-					} else if (selectedIndex === 3) {
-						setFeeds(
-							data.sort(
-								(
-									a: { publishDate: string | number | Date },
-									b: { publishDate: string | number | Date }
-								) => {
-									//valueOf on each of it's operands. Since valueOf on Date returns a number
-									return new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf();
-								}
-							)
-						);
-					} else if (selectedIndex === 4) {
-						setFeeds(data.filter((item: { isPopular: boolean }) => item.isPopular === true));
-					}
-				});
-			};
-			fetchData();
-			setLoading(false);
+			if (localStorage.getItem('feeds')) {
+				const data = JSON.parse(localStorage.getItem('feeds') || '{}');
+				if (selectedIndex === 1) {
+					setFeeds(data);
+				} else if (selectedIndex === 2) {
+					setFeeds(
+						data.filter((item: { publisher: { following: boolean } }) => item.publisher.following === true)
+					);
+				} else if (selectedIndex === 3) {
+					const result = data.sort(
+						(a: { publishDate: string | number | Date }, b: { publishDate: string | number | Date }) => {
+							//+ returns a number
+							return +new Date(b.publishDate) - +new Date(a.publishDate);
+						}
+					);
+					setFeeds(result);
+				} else if (selectedIndex === 4) {
+					setFeeds(data.filter((item: { isPopular: boolean }) => item.isPopular === true));
+				}
+			}
 		},
 		[ selectedIndex ]
 	);
 
-	console.log(feeds);
+	const handleSetLike = async (id: number) => {
+		let dataClone = [ ...feeds ];
+
+		let item = dataClone.find((item: { id: number }) => item.id === id);
+
+		let itemToUpdate: any;
+		if (item && item.isLiked) {
+			// remove like
+			itemToUpdate = { ...item, isLiked: false, noOfLikes: item.noOfLikes - 1 };
+		} else if (item && !item.isLiked) {
+			// add like
+			itemToUpdate = { ...item, isLiked: true, noOfLikes: item.noOfLikes + 1 };
+		}
+
+		try {
+			const newItems = dataClone.map((ele) => {
+				if (ele.id === itemToUpdate.id) {
+					return {
+						...itemToUpdate
+					};
+				} else {
+					return ele;
+				}
+			});
+			setFeeds(newItems);
+			await fetch(`http://localhost:5500/feeds/${id}`, {
+				method: 'PUT',
+				headers: {
+					'Content-type': 'application/json'
+				},
+				body: JSON.stringify(itemToUpdate)
+			});
+		} catch (e) {
+			console.error(e);
+		}
+		fetchData();
+	};
 
 	if (loading) return <h3>Loading ... </h3>;
 	return (
@@ -105,7 +142,7 @@ const Home = () => {
 						{/* end Feeds header component */}
 
 						{/* Feeds list component */}
-						<FeedsList data={feeds} />
+						<FeedsList data={feeds} onSetLike={handleSetLike} />
 						{/* end Feeds list component */}
 					</div>
 				</div>
