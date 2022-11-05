@@ -1,0 +1,35 @@
+@import '../../../styles/abstract/variables';
+
+.search__input {
+	border: 1px solid $color-border;
+	position: relative;
+	width: 130px;
+	padding: 0.9rem 1.5rem 0.9rem 3rem;
+	border-radius: 30px;
+	input {
+		border: 0;
+		color: $color-secondary;
+		background-color: transparent;
+		&::placeholder {
+			color: $color-secondary;
+		}
+	}
+	svg {
+		position: absolute;
+		top: 18px;
+		left: 1rem;
+		font-size: 1.3em;
+	}
+}
+
+.dot__icon {
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: $color-red;
+	position: absolute;
+	z-index: 3;
+	top: 40%;
+	right: 33%;
+	outline: 2px solid $color-white;
+}
