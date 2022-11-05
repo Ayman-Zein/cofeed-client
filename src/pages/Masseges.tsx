@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Masseges = () => {
-	return <div>Masseges</div>;
+	return <div className='page'>Masseges</div>;
 };
 
 export default Masseges;
