@@ -10,10 +10,17 @@
 			align-items: center;
 			width: 100%;
 			margin: 1rem 0;
-			font-size: 1.1rem;
+			font-size: 1rem;
 			font-weight: 500;
+			padding: .75rem 0;
+			margin-left: 1.2rem;
 			&:hover {
 				color: $color-primary !important;
+			}
+			&[aria-current="page"] {
+				span {
+					color: $color-headers !important;
+				}
 			}
 		}
 	}
