@@ -1,7 +1,7 @@
 @import '../../../styles/abstract/variables';
 
 .list__items {
-	padding: 2rem 0;
+	padding: 1.5rem 0;
 	border-bottom: 1px solid $color-border;
 
 	.follow__btn {
@@ -9,10 +9,24 @@
 		border-color: $color-primary;
 		padding: 0.2rem 1.5rem;
 		font-size: .875rem;
+		width: 100px;
 		&:hover,
 		&:focus {
 			background-color: $color-primary;
 			border-color: $color-primary;
+		}
+
+		&.follow__btnOutline {
+			background-color: transparent;
+			border-color: $color-border;
+			color: $color-headers;
+
+			&:hover,
+			&:focus {
+				border-color: $color-border;
+				color: $color-headers;
+				color: $color-headers;
+			}
 		}
 	}
 }
