@@ -24,12 +24,12 @@ const ListItems = () => {
 			{/* list item */}
 			<div className='d-flex align-items-center justify-content-between mb-3'>
 				<Avatar
-					imgSrc='/images/avatar1.png'
+					imgSrc='/images/avatar2.png'
 					size={50}
 					borderColor='#fff'
 					direction='row'
-					text='Vin Diesel'
-					subText='@vindiesel'
+					text='Dean Supardi'
+					subText='@Dean'
 				/>
 				<Button className={`ml-auto ${classes.follow__btn} ${classes.follow__btnOutline}`}>Followed</Button>
 			</div>
@@ -38,12 +38,12 @@ const ListItems = () => {
 			{/* list item */}
 			<div className='d-flex align-items-center justify-content-between mb-3'>
 				<Avatar
-					imgSrc='/images/avatar1.png'
+					imgSrc='/images/avatar4.png'
 					size={50}
 					borderColor='#fff'
 					direction='row'
-					text='Vin Diesel'
-					subText='@vindiesel'
+					text='Walter John'
+					subText='@Walter'
 				/>
 				<Button className={`ml-auto ${classes.follow__btn}`}>Follow</Button>
 			</div>
