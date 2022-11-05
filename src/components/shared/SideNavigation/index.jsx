@@ -14,8 +14,8 @@ const activeStyle = {
 
 const SideNavigation = () => {
 	return (
-		<div className=''>
-			<h3 className='mt-4 mb-3'>menu</h3>
+		<React.Fragment>
+			<h3 className='mt-5 mb-4 sec-header ms-4'>menu</h3>
 			<nav className={classes.nav}>
 				<ul className='list-unstyled'>
 					<li className={classes.nav__link}>
@@ -61,7 +61,7 @@ const SideNavigation = () => {
 					</li>
 				</ul>
 			</nav>
-		</div>
+		</React.Fragment>
 	);
 };
 

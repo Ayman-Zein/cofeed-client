@@ -3,9 +3,10 @@
 	min-height: 100vh;
 }
 .sideBar__content {
+	padding-top: 2rem;
 	background-color: $color-gray-light;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-	clip-path: inset(0px -15px 0px 0px);
+	clip-path: inset(0px -1px 0px 0px);
 }
 
 .mainContent {

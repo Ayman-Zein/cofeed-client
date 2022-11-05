@@ -47,7 +47,7 @@ const Avatar: React.FC<{
 			</div>
 			<div className={`${direction === 'row' ? 'ms-2' : 'mt-3'} `}>
 				{text && <h4 className={`${classes.avatar__userName} ${direction === 'row' ? '' : 'mt-0'}`}>{text}</h4>}
-				{subText && <p>{subText}</p>}
+				{subText && <p className='mb-0 text-gray-small'>{subText}</p>}
 			</div>
 		</div>
 	);

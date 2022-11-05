@@ -1,10 +1,19 @@
 @import '../../../styles/abstract/variables';
 
 .sideMenu {
-	//background-color: #ddd;
+	.logo__wrapper {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		border-radius: 50%;
+		box-shadow: 0 0 10px #eee;
+		text-align: center;
+		margin-right: 1rem;
+	}
 	&__logoImg {
-		width: 40px;
-		height: 35px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
 	}
 	&__logoName {
 		color: $color-primary;
@@ -21,5 +30,12 @@
 			width: 12px;
 			background-color: $color-primary;
 		}
+	}
+	.banner {
+		margin-top: 2rem;
+		width: 90%;
+		height: 200px;
+		outline: 2px solid #eee;
+		border-radius: 20px;
 	}
 }
