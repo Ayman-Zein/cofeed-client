@@ -27,9 +27,9 @@ const FeedsCard: React.FC<{
 						color={isLiked ? '#ff5775' : '#a4b6e1'}
 						onClick={() => onSetLike(id)}
 					/>
-					<span className='ms-2 me-3'>{numLikes}</span>
+					<span className='ms-2 me-3 ms-lg-1 me-lg-2 '>{numLikes}</span>
 					<AiFillMessage fontSize={'1.8em'} color='#a4b6e1' onClick={() => console.log('clicked')} />
-					<span className='ms-2'>{numComments}</span>
+					<span className='ms-2 ms-lg-1 '>{numComments}</span>
 				</div>
 			</div>
 		</div>

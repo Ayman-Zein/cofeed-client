@@ -1,11 +1,19 @@
 @import '../../../styles/abstract/variables';
+@import '../../../styles/abstract/mixins';
 
 .tabs {
 	&__tabItem {
-		margin-right: 1rem;
+		margin-right: .5rem;
 		cursor: pointer;
 		color: $color-secondary;
 		font-weight: 500;
+		&:last-child {
+			margin-right: 0;
+		}
+		@include breakpoint(md) {
+			margin-right: 1rem;
+		}
+
 		&.activeTab {
 			color: $color-primary;
 		}

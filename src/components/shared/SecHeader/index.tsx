@@ -4,7 +4,7 @@ const SecHeader: React.FC<{ title: string; RightComponent?: React.ReactNode }> =
 	return (
 		<div className='d-flex align-items-center justify-content-between'>
 			<h3 className='sec-header'>{title}</h3>
-			<div className='ml-auto'>{RightComponent && RightComponent}</div>
+			<div className='ml-auto d-flex align-items-center'>{RightComponent && RightComponent}</div>
 		</div>
 	);
 };

@@ -12,7 +12,7 @@ const FeedsTabs: React.FC<{ tabs: TabItem[]; activeIndex: number; onSelectTab: (
 	onSelectTab
 }) => {
 	return (
-		<div className={`${classes.tabs} d-flex justify-content-between mb-4`}>
+		<div className={`${classes.tabs} d-flex justify-content-between mb-0 `}>
 			{tabs.length > 0 &&
 				tabs.map(({ id, title }, index) => (
 					<span

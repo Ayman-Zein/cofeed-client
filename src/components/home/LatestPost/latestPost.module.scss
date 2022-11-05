@@ -1,4 +1,5 @@
 @import '../../../styles/abstract/variables';
+@import '../../../styles/abstract/mixins';
 
 .latest__card {
 	padding: 1.5rem 1rem;
@@ -15,7 +16,10 @@
 		font-weight: 500;
 		color: $color-headers;
 		margin-bottom: 0 !important;
-		width: 100px;
+		width: 100%;
+		@include breakpoint(xl) {
+			width: 100px;
+		}
 	}
 	span {
 		font-size: 0.875rem;

@@ -127,9 +127,9 @@ const Home = () => {
 
 	if (loading) return <h3>Loading ... </h3>;
 	return (
-		<Row>
-			<Col lg={8}>
-				<div className='px-3'>
+		<Row className='mt-3 mt-lg-0 '>
+			<Col lg={12} xl={8}>
+				<div className='px-3 mob-border'>
 					{/* Stories component */}
 					<Stories />
 					{/* end Stories component */}
@@ -150,7 +150,7 @@ const Home = () => {
 					</div>
 				</div>
 			</Col>
-			<Col lg={4}>
+			<Col lg={12} xl={4}>
 				<div className='rightContainer'>
 					<Toolbar />
 					<Suggestions />

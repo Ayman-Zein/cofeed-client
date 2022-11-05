@@ -15,7 +15,16 @@
 }
 .rightContainer {
 	margin-top: 1.5rem;
-	border-left: 1px solid $color-border;
 	min-height: 100vh;
 	padding: 0 1rem;
+
+	@include breakpoint(xl) {
+		border-left: 1px solid $color-border;
+	}
+}
+.mob-border {
+	border-bottom: 1px solid $color-border;
+	@include breakpoint(xl) {
+		border-bottom: 0;
+	}
 }
