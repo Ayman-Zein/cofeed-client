@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
 import FeedsCard from '../FeedsCard';
+
 interface FeedItem {
 	id: number;
 	imgSrc: string;
@@ -12,12 +13,13 @@ interface FeedItem {
 	noOfLikes: number;
 	noOfComments: number;
 }
+
 const FeedsList: React.FC<{ data: FeedItem[]; onSetLike: any }> = ({ data, onSetLike }) => {
 	return (
-		<Row>
+		<Row className='mt-4 '>
 			{data.length > 0 ? (
 				data.map((item) => (
-					<Col lg={6} key={item.id}>
+					<Col md={6} key={item.id}>
 						<FeedsCard
 							id={item.id}
 							feedImg={item.imgSrc}
