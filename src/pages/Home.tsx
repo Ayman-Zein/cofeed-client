@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import FeedsList from '../components/home/FeedsList';
 
 import FeedsTabs from '../components/home/FeedsTabs';
+import LatestPost from '../components/home/LatestPost';
 import Stories from '../components/home/Stories';
 import Suggestions from '../components/home/Suggestions';
 import Toolbar from '../components/home/Toolbar';
@@ -153,6 +154,7 @@ const Home = () => {
 				<div className='rightContainer'>
 					<Toolbar />
 					<Suggestions />
+					<LatestPost />
 				</div>
 			</Col>
 		</Row>

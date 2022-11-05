@@ -31,7 +31,7 @@ const ListItems = () => {
 					text='Vin Diesel'
 					subText='@vindiesel'
 				/>
-				<Button className={`ml-auto ${classes.follow__btn}`}>Follow</Button>
+				<Button className={`ml-auto ${classes.follow__btn} ${classes.follow__btnOutline}`}>Followed</Button>
 			</div>
 			{/* end list item */}
 

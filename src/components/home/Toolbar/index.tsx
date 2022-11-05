@@ -18,7 +18,7 @@ const Toolbar = () => {
 					<span className={classes.dot__icon} />
 				</React.Fragment>
 			</RoundedButton>
-			<RoundedButton bgColor='#58b9ff'>
+			<RoundedButton bgColor='#58b9ff' shadow>
 				<BsCloudUploadFill fontSize={'1.3em'} color='#fff' />
 			</RoundedButton>
 		</div>

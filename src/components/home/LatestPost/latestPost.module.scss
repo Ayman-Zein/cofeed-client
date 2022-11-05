@@ -1,0 +1,24 @@
+@import '../../../styles/abstract/variables';
+
+.latest__card {
+	padding: 1.5rem 1rem;
+	border: 2px solid $color-white;
+	border-radius: 15px;
+	img {
+		width: 50%;
+		border-radius: 15px;
+		outline: 2px solid $color-white;
+	}
+
+	&__title {
+		font-size: 1rem;
+		font-weight: 500;
+		color: $color-headers;
+		margin-bottom: 0 !important;
+		width: 100px;
+	}
+	span {
+		font-size: 0.875rem;
+		color: $color-secondary;
+	}
+}
