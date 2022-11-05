@@ -4,6 +4,8 @@ import FeedsList from '../components/home/FeedsList';
 
 import FeedsTabs from '../components/home/FeedsTabs';
 import Stories from '../components/home/Stories';
+import Suggestions from '../components/home/Suggestions';
+import Toolbar from '../components/home/Toolbar';
 import SecHeader from '../components/shared/SecHeader';
 
 const TABSLIST = [
@@ -125,7 +127,7 @@ const Home = () => {
 	if (loading) return <h3>Loading ... </h3>;
 	return (
 		<Row>
-			<Col lg={9}>
+			<Col lg={8}>
 				<div className='px-3'>
 					{/* Stories component */}
 					<Stories />
@@ -147,8 +149,11 @@ const Home = () => {
 					</div>
 				</div>
 			</Col>
-			<Col lg={3} className='bg-danger'>
-				hi
+			<Col lg={4}>
+				<div className='rightContainer'>
+					<Toolbar />
+					<Suggestions />
+				</div>
 			</Col>
 		</Row>
 	);

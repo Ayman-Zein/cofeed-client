@@ -1,0 +1,10 @@
+@import '../../../styles/abstract/variables';
+
+.suggestions {
+	.seeAll {
+		font-size: 1rem;
+		font-weight: 600;
+		color: $color-primary;
+		text-transform: capitalize;
+	}
+}
